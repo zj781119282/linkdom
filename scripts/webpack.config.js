@@ -33,6 +33,7 @@ module.exports = {
   resolve: {
     alias: {
       header: path.resolve(__dirname, '../src/components/header/'),
+      banner: path.resolve(__dirname, '../src/components/banner/'),
     },
   },
   plugins: [

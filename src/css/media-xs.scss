@@ -1,0 +1,103 @@
+@import "mixin";
+@import "theme";
+
+/* 小屏幕样式 */
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: calc(1000vw / 75);
+    line-height: 1;
+  }
+
+  .col-xs-1 { width: 8.333333%; }.col-xs-2 { width: 16.666667% }.col-xs-3 { width: 25% }.col-xs-4 { width: 33.333333% }.col-xs-5 { width: 41.666667% }.col-xs-6 { width: 50% }
+  .col-xs-7 { width: 58.333333%; }.col-xs-8 { width: 66.666667% }.col-xs-9 { width: 75% }.col-xs-10 { width: 83.333333% }.col-xs-11 { width: 91.666667% }.col-xs-12 { width: 100% }
+
+  .hide-xs {
+    display: none;
+  }
+
+  .visible-xs {
+    display: block;
+  }
+
+  .visible-xs-inline {
+    display: inline;
+  }
+
+  .visible-xs-inbl {
+    display: inline-block;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav.navbar {
+    @include wh(100%, .88rem);
+
+    .nav-container {
+      display: flex;
+      position: relative;
+      justify-content: space-between;
+      align-items: center;
+      @include wh(100%, 100%);
+
+      .nav-button {
+        margin-right: .3rem;
+        background-color: $deep-black-background;
+        @include wh(.47rem, .47rem);
+        @include icon-normal('./../assets/common/menu.svg');
+        &.close {
+          @include icon-normal('./../assets/common/close.svg');
+        }
+      }
+
+      .nav-logo {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-left: .3rem;
+        img {
+          max-height: 80%;
+        }
+      }
+
+      ul.nav-list {
+        display: block;
+        position: absolute;
+        top: .88rem;
+        background: $deep-black-background;
+        transition: all .2s ease;
+        z-index: 999;
+        @include wh(100%, calc(100vh - 100%));
+        li {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: .3rem 0;
+          a {
+            width: 80%;
+            padding: .16rem 0;
+            text-align: center;
+            font-size: .3rem;
+          }
+          &:active {
+            background-color: rgba(51, 51, 51, .8);
+          }
+        }
+        &.xs-hide {
+          height: 0;
+          li {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .content {
+    flex: 1;
+    overflow-y: auto;
+  }
+}
