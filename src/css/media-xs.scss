@@ -32,71 +32,8 @@
     flex-direction: column;
   }
 
-  nav.navbar {
-    @include wh(100%, .88rem);
-
-    .nav-container {
-      display: flex;
-      position: relative;
-      justify-content: space-between;
-      align-items: center;
-      @include wh(100%, 100%);
-
-      .nav-button {
-        margin-right: .3rem;
-        background-color: $deep-black-background;
-        @include wh(.47rem, .47rem);
-        @include icon-normal('./../assets/common/menu.svg');
-        &.close {
-          @include icon-normal('./../assets/common/close.svg');
-        }
-      }
-
-      .nav-logo {
-        display: flex;
-        height: 100%;
-        align-items: center;
-        justify-content: center;
-        margin-left: .3rem;
-        img {
-          max-height: 80%;
-        }
-      }
-
-      ul.nav-list {
-        display: block;
-        position: absolute;
-        top: .88rem;
-        background: $deep-black-background;
-        transition: all .2s ease;
-        z-index: 999;
-        @include wh(100%, calc(100vh - 100%));
-        li {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin: .3rem 0;
-          a {
-            width: 80%;
-            padding: .16rem 0;
-            text-align: center;
-            font-size: .3rem;
-          }
-          &:active {
-            background-color: rgba(51, 51, 51, .8);
-          }
-        }
-        &.xs-hide {
-          height: 0;
-          li {
-            display: none;
-          }
-        }
-      }
-    }
-  }
-
   .content {
+    height: calc(100vh - .88rem);
     flex: 1;
     overflow-y: auto;
   }

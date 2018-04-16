@@ -2,15 +2,16 @@
 @import "mixin";
 
 .swiper-slide {
-  background: url("./assets/banner.png") no-repeat;
-  background-size: 100% 100%;
+  @include wh(100%, 46.875vw);
+  @include icon-normal('./assets/banner.png');
+
   a {
     display: inline-block;
     @include wh(100%, 100%);
   }
 }
 
-@media only screen and (max-width: 768px) {
+/*@media only screen and (max-width: 768px) {
   .swiper-slide {
     @include wh(100%, 6rem);
   }
@@ -18,6 +19,6 @@
 
 @media only screen and (min-width: 768px) {
   .swiper-slide {
-    @include wh(100%, 41.666666vw);
+    @include wh(100%, 46.875vw);
   }
-}
+}*/

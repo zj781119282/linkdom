@@ -22,7 +22,6 @@ body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, l
 
 html, body, .wrapper {
   width: 100%;
-  height: 100%;
 }
 
 input[type="button"], input[type="submit"], input[type="search"], input[type="reset"] {
@@ -30,6 +29,10 @@ input[type="button"], input[type="submit"], input[type="search"], input[type="re
 }
 
 textarea { -webkit-appearance: none;}
+
+img {
+  vertical-align: top;
+}
 
 /* 全局可用的class类 */
 .clearfix:after {

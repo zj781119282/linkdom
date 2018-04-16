@@ -1,1 +1,57 @@
 @import "./theme";
+@import "./mixin";
+
+.index-display {
+  .container {
+    margin: 0 auto;
+    @include wh(100%, 55vw);
+    &.index-assets {
+      @include icon-normal('./../assets/index/index-assets.png');
+    }
+    &.index-multi-address {
+      @include icon-normal('./../assets/index/index-multi-address.png');
+    }
+    &.index-payment {
+      @include icon-normal('./../assets/index/index-payment.png');
+    }
+    &.index-operation {
+      @include icon-normal('./../assets/index/index-operation.png');
+    }
+    &.index-portable {
+      @include icon-normal('./../assets/index/index-portable.png');
+    }
+    &.index-coins {
+      @include icon-normal('./../assets/index/index-coins.png');
+    }
+  }
+}
+
+.prod-intro {
+  .container {
+    display: flex;
+    align-items: center;
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 10%;
+    }
+    .image {
+      img {
+        width: 100%;
+      }
+    }
+    .left, .right {
+      width: 50%;
+    }
+    h2 {
+      padding: .2rem 0 .1rem;
+      font-size: .4rem;
+      font-weight: bolder;
+    }
+    p {
+      margin-top: .1rem;
+      font-size: .24rem;
+    }
+  }
+}

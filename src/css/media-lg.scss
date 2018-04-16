@@ -3,6 +3,10 @@
 
 /* 大屏幕样式 */
 @media only screen and (min-width: 768px) {
+  html {
+    font-size: calc(1000vw / 192);
+  }
+
   .col-lg-1 { width: 8.333333%; }.col-lg-2 { width: 16.666667% }.col-lg-3 { width: 25% }.col-lg-4 { width: 33.333333% }.col-lg-5 { width: 41.666667% }.col-lg-6 { width: 50% }
   .col-lg-7 { width: 58.333333%; }.col-lg-8 { width: 66.666667% }.col-lg-9 { width: 75% }.col-lg-10 { width: 83.333333% }.col-lg-11 { width: 91.666667% }.col-lg-12 { width: 100% }
 
@@ -20,55 +24,5 @@
 
   .visible-lg-inbl {
     display: inline-block;
-  }
-
-  nav.navbar {
-    position: fixed;
-    z-index: 999;
-    background-color: rgba(51, 51, 51, .8);
-    @include wh(100%, 60px);
-
-    .nav-container {
-      position: relative;
-      @include wh(100%, 100%);
-
-      .nav-button {
-        display: none;
-      }
-
-      .nav-logo {
-        height: 100%;
-        img {
-          margin-left: 15px;
-          margin-top: 6px;
-          max-height: 80%;
-        }
-      }
-
-      ul.nav-list {
-        display: block;
-        position: absolute;
-        height: 100%;
-        top: 0;
-        right: 60px;
-        li {
-          height: 100%;
-          float: left;
-          margin: 0 20px;
-          a {
-            display: inline-block;
-            height: 100%;
-            line-height: 60px;
-            padding: 0 10px;
-          }
-          &:hover, &.active {
-            border-bottom: 1px solid $theme-color;
-            a {
-              color: $theme-color;
-            }
-          }
-        }
-      }
-    }
   }
 }
