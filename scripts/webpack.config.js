@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const UglifyjsPlugin = require('uglifyjs-webpack-plugin');
 
 const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 
@@ -34,20 +35,27 @@ module.exports = {
     alias: {
       header: path.resolve(__dirname, '../src/components/header/'),
       banner: path.resolve(__dirname, '../src/components/banner/'),
+      footer: path.resolve(__dirname, '../src/components/footer/'),
     },
   },
   plugins: [
-    new CleanWebpackPlugin([path.resolve(__dirname, './../dist')], { root: path.resolve(__dirname, '../') }),
-    isStart ? noop : new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        drop_debugger: true,
-        drop_console: true,
+    isStart ? noop : new CleanWebpackPlugin(
+      [path.resolve(__dirname, './../dist')],
+        { root: path.resolve(__dirname, '../') }
+    ),
+    isStart ? noop : new UglifyjsPlugin({
+      exclude: /(node_modules)/,
+      uglifyOptions: {
+        compress: {
+          drop_debugger: true,
+          drop_console: true,
+        },
       },
     }),
     new CommonsChunkPlugin({
-      name: 'components',
+      name: 'common',
       chunks: ['index'],
-      minChunks: 2, // 提取所有chunks共同依赖的模块
+      minChunks: 1, // 提取所有chunks共同依赖的模块
     }),
     new ExtractTextPlugin('css/[name].css?[contenthash:8]', {
       // allChunks: true
@@ -55,7 +63,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './../src/index.html',
-      chunks: ['components', 'index'],
+      chunks: ['common', 'index'],
     }),
   ],
   module: {
