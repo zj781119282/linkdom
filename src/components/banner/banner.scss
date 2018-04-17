@@ -2,23 +2,22 @@
 @import "mixin";
 
 .swiper-slide {
-  @include wh(100%, 46.875vw);
-  @include icon-normal('./assets/banner.png');
-
   a {
     display: inline-block;
     @include wh(100%, 100%);
   }
 }
 
-/*@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .swiper-slide {
-    @include wh(100%, 6rem);
+    @include wh(100%, 160vw);
+    @include icon-normal('./assets/banner-mobile.png');
   }
 }
 
 @media only screen and (min-width: 768px) {
   .swiper-slide {
     @include wh(100%, 46.875vw);
+    @include icon-normal('./assets/banner.png');
   }
-}*/
+}
