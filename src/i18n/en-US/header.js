@@ -5,6 +5,7 @@ const header = {
   help: 'Help',
   login: 'Login',
   email: 'Email:',
+  welcome: 'Welcome, ',
 };
 
 export default header;

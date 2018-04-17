@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import Cookies from 'js-cookie';
 import { i18nConfig } from 'i18n/i18n.config';
 
 import './common';
@@ -17,6 +18,8 @@ $(() => {
       return;
     }
     $('.error-block').hide();
-    console.log('login...');
+    Cookies.set('isLogged', true, { expires: 1 });
+    Cookies.set('account', account, { expires: 1 });
+    location.href = '/index.html';
   });
 });

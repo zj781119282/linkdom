@@ -5,6 +5,7 @@ const header = {
   help: '帮助',
   login: '登录',
   email: '邮箱：',
+  welcome: '欢迎，',
 };
 
 export default header;
