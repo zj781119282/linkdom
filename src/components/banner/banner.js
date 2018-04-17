@@ -4,12 +4,12 @@ import Swiper from 'swiper';
 import './banner.scss';
 
 $(() => {
-  const slidesCount = $('.swiper-slide').length;
+  const slidesCount = $('.banner-slide').length;
   if (slidesCount > 1) {
-    const mySwiper = new Swiper ('.swiper-container', {
+    const mySwiper = new Swiper ('.banner-container', {
       loop: true,
       pagination: {
-        el: '.swiper-pagination',
+        el: '.banner-pagination',
       },
     });
   }

@@ -1,7 +1,7 @@
 @import "theme";
 @import "mixin";
 
-.swiper-slide {
+.banner-slide {
   a {
     display: inline-block;
     @include wh(100%, 100%);
@@ -9,14 +9,14 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .swiper-slide {
+  .banner-slide {
     @include wh(100%, 160vw);
     @include icon-normal('./assets/banner-mobile.png');
   }
 }
 
-@media only screen and (min-width: 768px) {
-  .swiper-slide {
+@media only screen and (min-width: 769px) {
+  .banner-slide {
     @include wh(100%, 46.875vw);
     @include icon-normal('./assets/banner.png');
   }

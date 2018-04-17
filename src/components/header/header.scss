@@ -8,7 +8,7 @@ nav {
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
   nav.navbar {
     position: fixed;
     z-index: 999;
@@ -39,6 +39,7 @@ nav {
         top: 0;
         right: 60px;
         li {
+          position: relative;
           height: 100%;
           float: left;
           margin: 0 20px;
@@ -47,11 +48,31 @@ nav {
             height: 100%;
             line-height: 60px;
             padding: 0 10px;
+            &.switch-language:hover {
+              color: $theme-color;
+            }
           }
           &:hover, &.active {
             border-bottom: 1px solid $theme-color;
             a {
               color: $theme-color;
+            }
+          }
+          &.language {
+            ul {
+              position: absolute;
+              top: 100%;
+              left: 0;
+              background-color: $deep-black-background;
+              li {
+                padding: 10px;
+                white-space: nowrap;
+                cursor: pointer;
+                &:hover {
+                  color: $theme-color;
+                  border: none;
+                }
+              }
             }
           }
         }
@@ -114,6 +135,19 @@ nav {
           }
           &:active {
             background-color: rgba(51, 51, 51, .8);
+          }
+          &.language {
+            ul {
+              display: flex;
+
+              li {
+                padding: .3rem;
+                font-size: .24rem;
+                &:not(:last-child) {
+                  border-right: 1px solid #fff;
+                }
+              }
+            }
           }
         }
         &.xs-hide {
