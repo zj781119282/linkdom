@@ -20,6 +20,7 @@ module.exports = {
   context: __dirname,
   entry: {
     index: ['./../src/js/index.js'],
+    product: ['./../src/js/product.js'],
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -33,9 +34,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      header: path.resolve(__dirname, '../src/components/header/'),
-      banner: path.resolve(__dirname, '../src/components/banner/'),
-      footer: path.resolve(__dirname, '../src/components/footer/'),
+      i18n: path.resolve(__dirname, '../src/i18n/'),
+      comp: path.resolve(__dirname, '../src/components/'),
     },
   },
   plugins: [
@@ -54,8 +54,8 @@ module.exports = {
     }),
     new CommonsChunkPlugin({
       name: 'common',
-      chunks: ['index'],
-      minChunks: 1, // 提取所有chunks共同依赖的模块
+      chunks: ['index', 'product'],
+      minChunks: 2, // 提取所有chunks共同依赖的模块
     }),
     new ExtractTextPlugin('css/[name].css?[contenthash:8]', {
       // allChunks: true
@@ -64,6 +64,11 @@ module.exports = {
       filename: 'index.html',
       template: './../src/index.html',
       chunks: ['common', 'index'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'product.html',
+      template: './../src/product.html',
+      chunks: ['common', 'product'],
     }),
   ],
   module: {
