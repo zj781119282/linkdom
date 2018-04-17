@@ -9,6 +9,13 @@ $(() => {
     switchLanguage(key);
   }
 
+  const currentPathname = location.pathname.split('.')[0].substr(1);
+  if (currentPathname) {
+    $('.nav-list').find('.' + currentPathname).addClass('active');
+  } else {
+    $('.nav-list .index').addClass('active');
+  }
+
   $('nav .nav-button').click(function() {
     if ($('nav .nav-list').hasClass('xs-hide')) {
       $('nav .nav-list').removeClass('xs-hide');

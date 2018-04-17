@@ -4,8 +4,11 @@
 footer {
   background-color: $deep-black-background;
   * {
-    font-size: 16px;
+    font-size: .24rem;
     color: #fff;
+  }
+  .email-color {
+    color: $theme-color;
   }
 }
 
@@ -33,13 +36,9 @@ footer {
         }
       }
       .contact {
+        margin-left: 30px;
         p {
-          a {
-            display: inline-block;
-            &:hover, &:active {
-              color: $theme-color;
-            }
-          }
+          white-space: nowrap;
         }
       }
     }
