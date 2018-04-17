@@ -3,15 +3,19 @@ import header_en from './en-US/header';
 import header_cn from './zh-CN/header';
 import product_en from './en-US/product';
 import product_cn from './zh-CN/product';
+import login_en from './en-US/login';
+import login_cn from './zh-CN/login';
 
 const i18nConfig = {
   'en-US': {
     header: header_en,
     product: product_en,
+    login: login_en,
   },
   'zh-CN': {
     header: header_cn,
     product: product_cn,
+    login: login_cn,
   },
 };
 
@@ -33,4 +37,4 @@ function showTranslations() {
   });
 }
 
-export { showTranslations, switchLanguage };
+export { i18nConfig, showTranslations, switchLanguage };

@@ -21,6 +21,7 @@ module.exports = {
   entry: {
     index: ['./../src/js/index.js'],
     product: ['./../src/js/product.js'],
+    login: ['./../src/js/login.js'],
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -54,8 +55,8 @@ module.exports = {
     }),
     new CommonsChunkPlugin({
       name: 'common',
-      chunks: ['index', 'product'],
-      minChunks: 2, // 提取所有chunks共同依赖的模块
+      chunks: ['index', 'product', 'login'],
+      minChunks: 3, // 提取所有chunks共同依赖的模块
     }),
     new ExtractTextPlugin('css/[name].css?[contenthash:8]', {
       // allChunks: true
@@ -69,6 +70,11 @@ module.exports = {
       filename: 'product.html',
       template: './../src/product.html',
       chunks: ['common', 'product'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'login.html',
+      template: './../src/login.html',
+      chunks: ['common', 'login'],
     }),
   ],
   module: {

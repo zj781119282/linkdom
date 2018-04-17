@@ -1,2 +1,2 @@
-import common from './common';
+import './common';
 import './../css/product.scss';

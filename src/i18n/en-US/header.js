@@ -3,6 +3,7 @@ const header = {
   product: 'Product',
   down: 'Download',
   help: 'Help',
+  login: 'Login',
   email: 'Email:',
 };
 
