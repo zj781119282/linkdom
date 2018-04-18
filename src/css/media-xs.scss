@@ -27,6 +27,18 @@
     display: inline-block;
   }
 
+  .text-right-xs {
+    text-align: right;
+  }
+
+  .text-left-xs {
+    text-align: left;
+  }
+
+  .text-center-xs {
+    text-align: center;
+  }
+
   .wrapper {
     display: flex;
     flex-direction: column;

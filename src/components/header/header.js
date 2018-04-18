@@ -10,6 +10,12 @@ $(() => {
     switchLanguage(key);
   }
 
+  function logout() {
+    Cookies.remove('isLogged');
+    Cookies.remove('account');
+    location.reload();
+  }
+
   const currentLang = localStorage._lang === 'en-US' ? 'en-US' : 'zh-CN';
   const currentPathname = location.pathname.split('.')[0].substr(1);
   const account = Cookies.get('account');
@@ -22,9 +28,12 @@ $(() => {
   }
 
   if (account && isLogged) {
+    console.log('in....')
     $('.user-name').text(i18nConfig[currentLang]['header']['welcome'] + ' ' + account);
-    $('.account').show();
+    $('.account').css('display', 'flex');
     $('.login').hide();
+  } else {
+    $('.account').hide();
   }
 
   $('nav .nav-button').click(function() {
@@ -40,6 +49,13 @@ $(() => {
   $('.language').hover(() => {
     $('.language ul').toggle();
   });
+
+  $('.account').hover(() => {
+    $('.account ul').toggle();
+  });
+
+  $('.logout').click(logout);
+  $('.logout').on('touchend', logout);
 
   $('.switch-language').click(languageSwitchCallback);
   $('.switch-language').on('touchend', languageSwitchCallback);

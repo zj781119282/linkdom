@@ -7,8 +7,12 @@ import './../css/login.scss';
 
 $(() => {
   const currentLang = localStorage._lang === 'en-US' ? 'en-US' : 'zh-CN';
-  $('#login_account').attr('placeholder', i18nConfig[currentLang]['login']['palceholder_account']);
+  $('#login_account').attr('placeholder', i18nConfig[currentLang]['login']['placeholder_account']);
   $('#login_password').attr('placeholder', i18nConfig[currentLang]['login']['placeholder_password']);
+
+  $('.login-input').focus(() => {
+    $('.error-block').hide();
+  });
 
   $('.login-button').click(() => {
     const account = $('#login_account').val();
