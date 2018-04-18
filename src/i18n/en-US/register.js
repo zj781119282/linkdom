@@ -1,6 +1,6 @@
 const register = {
   register: 'Register',
-  had_account: 'Had an account already?',
+  had_account: 'Already Have an account?',
   login: 'Log in now!',
   placeholder_phone: 'Please Input Your Phone Number',
   placeholder_password: 'please Input Your Password',
